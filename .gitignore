@@ -7,3 +7,5 @@
 *.db-wal
 *.db-shm
 release/
+agent-logs/
+.armin/
