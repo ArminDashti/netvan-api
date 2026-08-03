@@ -1,0 +1,35 @@
+[package]
+name = "netvan-collectors"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Network collectors for Netvan (NIC, ping, HTTP latency, traceroute, traffic, speedtest)"
+
+[dependencies]
+netvan-core = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+chrono = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+parking_lot = { workspace = true }
+once_cell = { workspace = true }
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json"] }
+dns-lookup = "2"
+sysinfo = "0.33"
+url = "2"
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.58", features = [
+  "Win32_Foundation",
+  "Win32_NetworkManagement_IpHelper",
+  "Win32_NetworkManagement_Ndis",
+  "Win32_Networking_WinSock",
+  "Win32_System_IO",
+  "Win32_System_SystemInformation",
+  "Win32_System_Threading",
+  "Win32_System_ProcessStatus",
+  "Win32_Security",
+] }

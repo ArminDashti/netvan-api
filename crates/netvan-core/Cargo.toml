@@ -1,0 +1,19 @@
+[package]
+name = "netvan-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Shared types, SQLite schema, and IPC protocol for Netvan"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+rusqlite = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+directories = { workspace = true }
+tracing = { workspace = true }
+parking_lot = { workspace = true }

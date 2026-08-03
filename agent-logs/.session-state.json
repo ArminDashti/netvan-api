@@ -1,0 +1,13 @@
+{
+  "sessions": {
+    "b3701676-11e4-48b1-9469-b2fa86d70a1b": {
+      "log_file": "C:\\Users\\a.dashti\\GitHub\\netvan-api\\agent-logs\\2026-08-03-14-30-15.txt",
+      "started_at": "2026-08-03T14:30:15.581643"
+    }
+  },
+  "pending": {
+    "conversation_id": "b3701676-11e4-48b1-9469-b2fa86d70a1b",
+    "generation_id": "f48e5935-5e6f-4052-9f1e-9f580da7f3a5",
+    "created_at": "2026-08-03T14:51:30.840535"
+  }
+}
