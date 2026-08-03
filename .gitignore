@@ -1,3 +1,6 @@
+*.exe
+*.EXE
+
 /target
 **/*.rs.bk
 .DS_Store
@@ -9,3 +12,6 @@
 release/
 agent-logs/
 .armin/
+
+# --- auto: github-commit-push-all-repos ---
+# --- end auto ---
