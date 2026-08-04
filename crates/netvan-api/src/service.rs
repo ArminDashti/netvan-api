@@ -5,7 +5,7 @@ use tracing::info;
 
 pub const SERVICE_NAME: &str = "netvan-api";
 pub const SERVICE_DISPLAY: &str = "Netvan API";
-pub const DEFAULT_URL: &str = "http://127.0.0.1:8787";
+pub const DEFAULT_URL: &str = "http://127.0.0.1:8000";
 
 pub fn install() -> Result<()> {
     let exe = std::env::current_exe()?;

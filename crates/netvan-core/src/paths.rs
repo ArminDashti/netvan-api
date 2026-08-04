@@ -34,4 +34,4 @@ pub fn ensure_data_dir() -> std::io::Result<PathBuf> {
     Ok(dir)
 }
 
-pub const DEFAULT_BIND: &str = "127.0.0.1:8787";
+pub const DEFAULT_BIND: &str = "127.0.0.1:8000";

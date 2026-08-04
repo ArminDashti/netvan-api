@@ -42,11 +42,11 @@ SCM **service name:** `netvan-api`
 
 ## Listen address
 
-Default: `http://127.0.0.1:8787` (localhost only)
+Default: `http://127.0.0.1:8000` (localhost only)
 
 | Env | Default |
 |-----|---------|
-| `NETVAN_API_BIND` | `127.0.0.1:8787` |
+| `NETVAN_API_BIND` | `127.0.0.1:8000` |
 | `NETVAN_API_DATA_DIR` | `%ProgramData%\Netvan\NetvanApi\` |
 
 SQLite file: `netvan-web.db` under the data dir.
@@ -80,4 +80,4 @@ Server streams tagged events (`ping_line`, `traceroute_hop`, `speedtest_progress
 cargo run -p netvan-api -- run
 ```
 
-Then point **netvan-webui** at `http://127.0.0.1:8787`.
+Then point **netvan-webui** at `http://127.0.0.1:8000`.

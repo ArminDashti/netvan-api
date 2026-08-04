@@ -2,7 +2,7 @@
 
 Localhost API for **netvan-webui**. Collectors and tools run only inside the `netvan-api` Windows service.
 
-Default bind: `127.0.0.1:8787`
+Default bind: `127.0.0.1:8000`
 
 ## Endpoints
 
