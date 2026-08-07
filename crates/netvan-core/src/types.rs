@@ -247,3 +247,53 @@ pub struct SystemMetricHistory {
     pub series: Vec<SystemMetricPoint>,
     pub summary: MetricSummary,
 }
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct CpuInfo {
+    pub brand: String,
+    pub model: String,
+    pub base_speed_mhz: Option<u64>,
+    pub physical_cores: Option<u32>,
+    pub logical_processors: u32,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MemoryInfo {
+    pub brand: String,
+    pub model: String,
+    pub size_bytes: u64,
+    pub speed_mhz: Option<u32>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DiskInfo {
+    pub brand: String,
+    pub model: String,
+    pub capacity_bytes: u64,
+    pub kind: DiskKind,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct GpuInfo {
+    pub brand: String,
+    pub model: String,
+    pub memory_bytes: Option<u64>,
+    pub cuda_cores: Option<u32>,
+    pub tensor_cores: Option<u32>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MotherboardInfo {
+    pub brand: String,
+    pub model: String,
+    pub ram_slots: Option<u32>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct HardwareInventory {
+    pub cpu: CpuInfo,
+    pub memory: MemoryInfo,
+    pub disks: Vec<DiskInfo>,
+    pub gpus: Vec<GpuInfo>,
+    pub motherboard: MotherboardInfo,
+}

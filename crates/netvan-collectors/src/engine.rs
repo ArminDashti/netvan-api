@@ -480,6 +480,9 @@ impl CollectorEngine {
                 self.system.refresh_live();
                 RpcResponse::Disks(self.system.disk_snapshots(Some(kind)))
             }
+            RpcRequest::GetHardwareInventory => {
+                RpcResponse::HardwareInventory(crate::hardware_inventory::collect())
+            }
             RpcRequest::GetCpuHistory {
                 range,
                 start_ts,

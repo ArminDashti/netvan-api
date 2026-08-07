@@ -22,6 +22,7 @@ sysinfo = "0.33"
 url = "2"
 
 [target.'cfg(windows)'.dependencies]
+wmi = "0.14"
 windows = { version = "0.58", features = [
   "Win32_Foundation",
   "Win32_NetworkManagement_IpHelper",
