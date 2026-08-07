@@ -1,0 +1,24 @@
+---
+description: Agent WebUI testing must not use the user personal browser
+alwaysApply: true
+---
+
+# Non-interrupting browser for agent testing
+
+When the agent tests, reviews, or debugs a webpage in a browser:
+
+## Allowed
+
+1. **Cursor built-in IDE browser** (`cursor-ide-browser` / IDE Browser panel) — preferred
+2. **Separated/isolated browser only** — Playwright (or equivalent) with its own profile/context that does **not** attach to the user's working browser session (e.g. Docker Playwright MCP tools when available)
+
+## Forbidden (unless the user explicitly asks)
+
+- The user's personal/working Chrome, Edge, or Firefox (tabs they are using)
+- `plugin-browse-browser` **local** mode — it uses the user's installed Chrome and can interrupt their work
+- Windows MCP desktop UI tools (`Click`, `Type`, `Screenshot`, `Snapshot`, …) to drive a web page
+- Opening the app via the OS default browser (`start`, `Start-Process`, `xdg-open`, etc.) for agent-driven testing
+
+## Goal
+
+Agent browser work must **not** steal focus from or interrupt the user's desktop browsing session.
