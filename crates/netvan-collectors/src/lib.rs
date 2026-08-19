@@ -7,6 +7,7 @@ pub mod ping;
 pub mod speedtest;
 pub mod hardware_inventory;
 pub mod system_metrics;
+pub mod thermal;
 pub mod traceroute;
 pub mod traffic_process;
 mod win_cmd;

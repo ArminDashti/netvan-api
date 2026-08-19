@@ -297,3 +297,28 @@ pub struct HardwareInventory {
     pub gpus: Vec<GpuInfo>,
     pub motherboard: MotherboardInfo,
 }
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum HardwareKind {
+    Cpu,
+    Gpu,
+    Motherboard,
+    Storage,
+    Memory,
+    Other,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ThermalSensor {
+    pub id: String,
+    pub hardware_kind: HardwareKind,
+    pub hardware_name: String,
+    pub sensor_name: String,
+    pub celsius: Option<f64>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ThermalSnapshot {
+    pub sensors: Vec<ThermalSensor>,
+}

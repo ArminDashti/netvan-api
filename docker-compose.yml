@@ -1,0 +1,44 @@
+# Local Docker: bind-mount source + cargo-watch --poll so host edits rebuild in the container.
+# Override via env: IMAGE_TAG, DOCKER_NETWORK, INTERNAL_PORT, PUBLISH_PORT
+services:
+  netvan-api:
+    image: ${IMAGE_TAG:-netvan-api:latest}
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: netvan-api
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      NETVAN_API_BIND: 0.0.0.0:${INTERNAL_PORT:-8000}
+      NETVAN_API_DATA_DIR: /data
+      RUST_LOG: info
+      CARGO_TARGET_DIR: /app/target
+      CARGO_TERM_COLOR: always
+      CARGO_BUILD_TARGET: x86_64-unknown-linux-gnu
+    volumes:
+      - .:/app
+      - netvan-api-target:/app/target
+      - netvan-api-cargo-registry:/usr/local/cargo/registry
+      - netvan-api-cargo-git:/usr/local/cargo/git
+      - netvan-api-data:/data
+    expose:
+      - "${INTERNAL_PORT:-8000}"
+    ports:
+      - target: ${INTERNAL_PORT:-8000}
+        published: ${PUBLISH_PORT-8171}
+        protocol: tcp
+    networks:
+      - netvan-net
+
+networks:
+  netvan-net:
+    name: ${DOCKER_NETWORK:-netvan-net}
+    external: true
+
+volumes:
+  netvan-api-target:
+  netvan-api-cargo-registry:
+  netvan-api-cargo-git:
+  netvan-api-data:

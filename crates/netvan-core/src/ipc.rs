@@ -86,6 +86,7 @@ pub enum RpcRequest {
     GetMemorySnapshot,
     GetDisks { kind: DiskKind },
     GetHardwareInventory,
+    GetThermalSnapshot,
     GetCpuHistory {
         range: HistoryRange,
         start_ts: Option<i64>,
@@ -130,6 +131,7 @@ pub enum RpcResponse {
     MemorySnapshot(MemorySnapshot),
     Disks(Vec<DiskSnapshot>),
     HardwareInventory(HardwareInventory),
+    ThermalSnapshot(ThermalSnapshot),
     CpuHistory(SystemMetricHistory),
     MemoryHistory(SystemMetricHistory),
     DiskHistory(SystemMetricHistory),

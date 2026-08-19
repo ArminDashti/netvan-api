@@ -10,6 +10,7 @@ Windows collectors orchestrated by `CollectorEngine`:
 - Process traffic (Mode A) via TCP table + PID + **TCP ESTATS** (`SetPerTcpConnectionEStats` / `GetPerTcpConnectionEStats`) — emits per-sample **deltas** of `DataBytesIn` / `DataBytesOut` (UDP uncounted; soft-fail per row)
 - Full mode (Mode B) DNS enrichment + WinDivert probe
 - **System metrics** (`system_metrics`): CPU / memory / disk via `sysinfo` — live refresh (~2s) for snapshots; persist tick (~5s) writes raw samples + hourly avg/min/max rollups. Disks classified as SSD/HDD (`sysinfo::DiskKind`); removable/unknown skipped.
+- **Thermal** (`thermal`): live temperatures only (no history). Spawns `netvan-hwmon.exe` (LibreHardwareMonitor) beside the service; RPC `GetThermalSnapshot` returns CPU / GPU / motherboard / storage / memory / other sensors. Missing hardware or helper → empty `sensors` list, not an RPC error. Snapshot cache ~1.5s.
 
 Child console tools (`ping`, `tracert`, `nslookup`, `ipconfig`, `where`, speedtest CLI) are spawned with Windows `CREATE_NO_WINDOW` via `win_cmd::hide_console` so they do not flash terminal windows while the UI stays a GUI app.
 

@@ -43,6 +43,8 @@ pub async fn run() -> Result<()> {
             };
             s.starts_with("http://127.0.0.1:")
                 || s.starts_with("http://localhost:")
+                || s == "http://pc-armin"
+                || s.starts_with("http://pc-armin:")
                 || s == "null"
         }));
 

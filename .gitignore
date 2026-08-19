@@ -2,6 +2,9 @@
 *.EXE
 
 /target
+tools/netvan-hwmon/bin/
+tools/netvan-hwmon/obj/
+tools/netvan-hwmon/publish/
 **/*.rs.bk
 .DS_Store
 .netvan-api-data/

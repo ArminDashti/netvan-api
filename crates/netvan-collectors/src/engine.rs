@@ -483,6 +483,9 @@ impl CollectorEngine {
             RpcRequest::GetHardwareInventory => {
                 RpcResponse::HardwareInventory(crate::hardware_inventory::collect())
             }
+            RpcRequest::GetThermalSnapshot => {
+                RpcResponse::ThermalSnapshot(crate::thermal::snapshot())
+            }
             RpcRequest::GetCpuHistory {
                 range,
                 start_ts,

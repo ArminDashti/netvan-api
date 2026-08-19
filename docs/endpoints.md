@@ -41,11 +41,15 @@ Default bind: `127.0.0.1:8000`
 | `GetCpuSnapshot` | — | `CpuSnapshot` |
 | `GetMemorySnapshot` | — | `MemorySnapshot` |
 | `GetDisks` | `{ kind: ssd\|hdd }` | `Disks` |
+| `GetHardwareInventory` | — | `HardwareInventory` |
+| `GetThermalSnapshot` | — | `ThermalSnapshot` |
 | `GetCpuHistory` | `{ range, start_ts?, end_ts? }` | `CpuHistory` |
 | `GetMemoryHistory` | same | `MemoryHistory` |
 | `GetDiskHistory` | `{ disk_id?, kind, range, start_ts?, end_ts? }` | `DiskHistory` |
 
 History `range`: `today` | `yesterday` | `week` | `months` | `all` | `custom`.
+
+`GetThermalSnapshot` returns `{ sensors: [{ id, hardware_kind, hardware_name, sensor_name, celsius }] }` where `hardware_kind` is `cpu` | `gpu` | `motherboard` | `storage` | `memory` | `other`. Live only; `celsius` may be null.
 
 ## WebSocket `/api/ws/tools`
 
