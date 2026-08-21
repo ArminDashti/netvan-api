@@ -440,3 +440,5 @@ target/x86_64-pc-windows-msvc/debug/incremental/netvan_core-3bv9lz05voezk/s-hl3m
 target/x86_64-pc-windows-msvc/debug/incremental/netvan_core-3bv9lz05voezk/s-hl3mrzj268-0bpylgo-ajqtercgxfetkcqnw9eips9jk/query-cache.bin
 target/x86_64-pc-windows-msvc/debug/incremental/netvan_core-3bv9lz05voezk/s-hl49gy78zy-0k8z99k-ajqtercgxfetkcqnw9eips9jk/dep-graph.bin
 target/x86_64-pc-windows-msvc/debug/incremental/netvan_core-3bv9lz05voezk/s-hl49gy78zy-0k8z99k-ajqtercgxfetkcqnw9eips9jk/query-cache.bin
+
+# AUTO-IGNORE-LARGE-FILES (>5MB) â€” managed by github-commit-push-all

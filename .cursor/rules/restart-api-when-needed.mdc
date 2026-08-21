@@ -24,6 +24,6 @@ Restart without waiting to be asked when any of these is true:
 
 ## How
 
-1. Reuse this project's existing local run path (watch command, `air`, `uvicorn --reload`, `runserver`, or the command already in the terminal).
-2. Stop only this project's local API process, then start it again on the same safe port it was using.
-3. Confirm it is listening before you tell the user the change is live.
+1. **Windows service (default for installed netvan-api):** follow `reinstall-after-code-change.mdc` — run `scripts\reinstall-windows-service.ps1` (uninstall old + install new). Do not only `stop`/`start`.
+2. **Foreground debug only** (`cargo run -- run` / watch): reuse that local run path; stop only this project's process, then start it again on the same port.
+3. Confirm it is listening (or service `status` is running) before you tell the user the change is live.
