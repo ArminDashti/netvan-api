@@ -442,3 +442,10 @@ target/x86_64-pc-windows-msvc/debug/incremental/netvan_core-3bv9lz05voezk/s-hl49
 target/x86_64-pc-windows-msvc/debug/incremental/netvan_core-3bv9lz05voezk/s-hl49gy78zy-0k8z99k-ajqtercgxfetkcqnw9eips9jk/query-cache.bin
 
 # AUTO-IGNORE-LARGE-FILES (>5MB) â€” managed by github-commit-push-all
+# github-commit-push-all: large files (>5MB) — auto-managed
+
+target/debug/deps/libcc-448c1b27c002757e.rlib
+target/debug/deps/libfind_msvc_tools-a7f6ab7d9f4d2acb.rlib
+target/x86_64-pc-windows-msvc/debug/deps/libwindows_sys-12733338ff34479a.rlib
+target/x86_64-pc-windows-msvc/debug/deps/libwindows_sys-12733338ff34479a.rmeta
+
